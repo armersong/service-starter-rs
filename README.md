@@ -1,2 +1,2 @@
 # service-starter-rs
-Rust Web开发基本架子
+Rust Web基本
