@@ -5,8 +5,6 @@ use common::util::now_in_milliseconds;
 use common::RedisCache;
 use serde::{Deserialize, Serialize};
 
-pub const SESSION_KEY_PREFIX_CLEANER: &str = "clr";
-pub const SESSION_KEY_PREFIX_VENDOR: &str = "vdr";
 pub const SESSION_KEY_PREFIX_ADMIN: &str = "admin";
 
 #[derive(Serialize, Deserialize, Debug)]
