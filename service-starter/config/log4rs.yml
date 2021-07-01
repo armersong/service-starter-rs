@@ -1,0 +1,35 @@
+refresh_rate: 30 seconds
+appenders:
+  stdout:
+    kind: console
+    encoder:
+      pattern: "{d} {t}:{L} {h({l})} {m}{n}"
+  service:
+    kind: rolling_file
+    path: "log/service.log"
+    encoder:
+      pattern: "{d} {t}:{L} {h({l})} {m}{n}"
+      # pattern: "{d} {f}:{L} {h({l})} {m}{n}"
+    policy:
+      kind: compound
+      trigger:
+        kind: size
+        limit: 10 mb
+      roller:
+        kind: fixed_window
+        pattern: 'log/service.log.{}'
+        base: 1
+        count: 10
+root:
+  level: debug
+  appenders:
+    - stdout
+    - service
+loggers:
+  app::backend::db:
+    level: info
+  app::service:
+    level: info
+    appenders:
+      - service
+    additive: false

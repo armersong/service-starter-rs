@@ -1,0 +1,6 @@
+web:
+    listen: 0.0.0.0:8090
+    workers: 4
+redis:
+    # format redis://[:<passwd>@]<hostname>[:port][/<db>]
+    url: redis://localhost

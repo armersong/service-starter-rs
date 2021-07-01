@@ -1,0 +1,8 @@
+/target
+Cargo.lock
+.idea
+log
+*.gz
+*.tar
+*.bz2
+.bak

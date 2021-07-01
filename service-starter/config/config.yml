@@ -1,0 +1,56 @@
+web:
+    listen: 0.0.0.0:8000
+    workers: 4
+# 缓存
+redis:
+    # format redis://[:<passwd>@]<hostname>[:port][/<db>]
+    url: redis://127.0.0.1:6379
+    pool_size: 16
+# 数据库
+mysql:
+    # dbname是任意存在的数据库名,
+    url: mysql://root:123456@127.0.0.1/admin
+    pool_size: 16
+# 会话
+session:
+    expire_time: 259200     # seconds
+# 数据库访问
+dao:
+    # 数据库名
+    admin_db: admin
+# 业务逻辑
+business:
+    wx_auth:
+        app_id: 
+        app_secret: 
+    sms:
+        secret_id: 
+        secret_key: 
+        sdk_app_id: 
+        template: 
+        signature: 
+    wx_pay:
+        app_id: 
+        app_secret: 
+        # 商户账号
+        mch_id: 
+        call_back_base_url: http://127.0.0.1:8000
+# 服务发现
+service_discover:
+    services:
+        "AUTHORIZOR":
+            addr: 127.0.0.1:2301
+        "SMS":
+            addr: 127.0.0.1:2101
+        "PAY":
+            addr: 127.0.0.1:2701
+# 功能开关
+switcher:
+    # 微信登录服务: 0(local), 1(proxy), 2(fake)
+    wx_auth_mode: 0
+    # 短信服务: 0(local), 1(proxy), 2(fake)
+    sms_mode:  0
+    # 微信服务: 0(local), 1(proxy), 2(fake)
+    wx_pay_mode: 0
+    # phone verification code check
+    vc_check : true
