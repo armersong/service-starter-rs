@@ -13,8 +13,8 @@ cargo build --release
 #cargo build
 
 echo "copy bin"
-#cp target/release/$SRC $DIST/bin/$DIST
-cp target/debug/$SRC $DIST/bin/$DIST
+cp target/release/$SRC $DIST/bin/$DIST
+#cp target/debug/$SRC $DIST/bin/$DIST
 cp service-ctl.sh $DIST/bin/
 
 echo "copy config"
